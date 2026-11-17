@@ -1,140 +1,114 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react"
+// Puedes renombrar o adaptar estos componentes posteriormente según tus tablas de exámenes/reactivos
 import TableTreatments from "../components/treatments/Table"
 import ModalTreatments from "../components/treatments/Modal"
 
-
-
 const Details = () => {
-    
-
-    const [treatments, setTreatments] = useState(["demo"])
-
-
+    const [simulaciones, setSimulaciones] = useState(["demo"])
 
     return (
-        <>
+        <div className="max-w-6xl mx-auto p-6 bg-white rounded-xl shadow-md my-6">
             <div>
-                <h1 className='font-black text-4xl text-gray-500'>Visualizar</h1>
-                <hr className='my-4 border-t-2 border-gray-300' />
-                <p className='mb-8'>Este módulo te permite visualizar todos los datos</p>
+                <h1 className='font-black text-3xl text-blue-950'>Detalles de la Evaluación</h1>
+                <hr className='my-4 border-t-2 border-gray-200' />
+                <p className='mb-8 text-gray-600'>Este módulo te permite visualizar la información detallada del estudiante y su rendimiento en las pruebas adaptativas.</p>
             </div>
 
-
             <div>
-                <div className='m-5 flex justify-between'>
+                <div className='m-5 flex flex-col md:flex-row justify-between items-center gap-8'>
+                    <div className="w-full md:w-2/3">
+                        <ul className="list-disc pl-5 space-y-4">
+                            {/* Datos del Estudiante */}
+                            <li>
+                                <span className="text-blue-900 font-bold text-xl">Datos del Estudiante</span>
+                                <ul className="pl-5 mt-2 space-y-2">
+                                    <li className="text-md">
+                                        <span className="text-gray-600 font-bold">Cédula: </span>
+                                        <span className="text-gray-800">1750000000</span>
+                                    </li>
+                                    <li className="text-md">
+                                        <span className="text-gray-600 font-bold">Nombres completos: </span>
+                                        <span className="text-gray-800">María José Paredes</span>
+                                    </li>
+                                    <li className="text-md">
+                                        <span className="text-gray-600 font-bold">Carrera / Programa: </span>
+                                        <span className="text-gray-800">ESFOT - Desarrollo de Software</span>
+                                    </li>
+                                    <li className="text-md">
+                                        <span className="text-gray-600 font-bold">Correo institucional: </span>
+                                        <span className="text-gray-800">marja.paredes@epn.edu.ec</span>
+                                    </li>
+                                </ul>
+                            </li>
 
-                    <div>
-
-
-                        <ul className="list-disc pl-5">
-
-                            <li className="text-md text-gray-00 mt-4 font-bold text-xl">Datos del propietrio</li>
-
-
-                            {/* Datos del propietario */}
-                            <ul className="pl-5">
-
-                                <li className="text-md mt-2">
-                                    <span className="text-gray-600 font-bold">Cédula: </span>
-                                </li>
-
-                                <li className="text-md mt-2">
-                                    <span className="text-gray-600 font-bold">Nombres completos: </span>
-                                </li>
-
-                                <li className="text-md mt-2">
-                                    <span className="text-gray-600 font-bold">Correo electrónico: </span>
-                                </li>
-
-                                <li className="text-md mt-2">
-                                <span className="text-gray-600 font-bold">Celular: </span>
-                                </li>
-
-                            </ul>
-
-
-
-                            <li className="text-md text-gray-00 mt-4 font-bold text-xl">Datos de la mascota</li>
-
-
-                            {/* Datos del paciente */}
-                            <ul className="pl-5">
-
-                                <li className="text-md mt-2">
-                                    <span className="text-gray-600 font-bold">Nombre: </span>
-                                </li>
-
-                                <li className="text-md mt-2">
-                                    <span className="text-gray-600 font-bold">Tipo: </span>
-                                </li>
-
-                                <li className="text-md mt-2">
-                                    <span className="text-gray-600 font-bold">Fecha de nacimiento: </span>
-                                </li>
-
-                                <li className="text-md mt-2">
-                                    <span className="text-gray-600 font-bold">Estado: </span>
-                                    <span className="bg-blue-100 text-green-500 text-xs font-medium 
-                                        mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-                                    </span>
-                                </li>
-
-                                <li className="text-md text-gray-00 mt-4">
-                                    <span className="text-gray-600 font-bold">Observación: </span>
-                                </li>
-                            </ul>
-
+                            {/* Datos de la Prueba Adaptativa */}
+                            <li>
+                                <span className="text-blue-900 font-bold text-xl">Detalles de la Simulación</span>
+                                <ul className="pl-5 mt-2 space-y-2">
+                                    <li className="text-md">
+                                        <span className="text-gray-600 font-bold">Área técnica: </span>
+                                        <span className="text-gray-800">Programación Web & Backend</span>
+                                    </li>
+                                    <li className="text-md">
+                                        <span className="text-gray-600 font-bold">Nivel alcanzado: </span>
+                                        <span className="text-gray-800">Intermedio - Avanzado</span>
+                                    </li>
+                                    <li className="text-md">
+                                        <span className="text-gray-600 font-bold">Fecha de evaluación: </span>
+                                        <span className="text-gray-800">2026-06-15</span>
+                                    </li>
+                                    <li className="text-md flex items-center gap-2">
+                                        <span className="text-gray-600 font-bold">Estado: </span>
+                                        <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                                            Completado
+                                        </span>
+                                    </li>
+                                    <li className="text-md">
+                                        <span className="text-gray-600 font-bold">Observación: </span>
+                                        <span className="text-gray-800">Excelente dominio en estructuras lógicas y consultas SQL.</span>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
-
                     </div>
                     
-                    
-                    {/* Imagen lateral */}
-                    <div>
-                        <img src="https://cdn-icons-png.flaticon.com/512/2138/2138440.png" 
-                            alt="dogandcat" className='h-80 w-80' />
+                    {/* Icono o Imagen lateral temática */}
+                    <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 flex items-center justify-center">
+                        <img 
+                            src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" 
+                            alt="Evaluación técnica" 
+                            className='h-48 w-48 object-contain' 
+                        />
                     </div>
                 </div>
 
+                <hr className='my-6 border-t-2 border-gray-200' />
 
-                <hr className='my-4 border-t-2 border-gray-300' />
+                {/* Sección de Historial / Reactivos */}
+                <div className='flex justify-between items-center mb-6'>
+                    <div>
+                        <h3 className='font-bold text-xl text-blue-950'>Historial de Reactivos Respondidos</h3>
+                        <p className='text-sm text-gray-600'>Este módulo te permite revisar el detalle de preguntas respondidas en la simulación</p>
+                    </div>
 
-
-                {/* Sección de tratamientos */}
-                <div className='flex justify-between items-center'>
-
-
-                    {/* Apertura del modal tratamientos */}
-                    <p>Este módulo te permite gestionar tratamientos</p>
-                    {
-                        true &&
-                        (
-                            <button className="px-5 py-2 bg-green-800 text-white rounded-lg hover:bg-green-700">
-                                Registrar
-                            </button>
-                        )
-                    }
-
-                    {false  && (<ModalTreatments/>)}
-
+                    <button className="px-5 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 font-semibold transition">
+                        Exportar Reporte
+                    </button>
                 </div>
                 
-
-                {/* Mostrar los tratamientos */}
+                {/* Mostrar los registros / historial */}
                 {
-                    treatments.length == 0
+                    simulaciones.length == 0
                         ?
-                        <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-                            <span className="font-medium">No existen registros</span>
+                        <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+                            <span className="font-medium">No existen registros de evaluaciones previas.</span>
                         </div>
                         :
-                        <TableTreatments treatments={treatments} />
+                        <TableTreatments treatments={simulaciones} />
                 }
-                
             </div>
-        </>
-
+        </div>
     )
 }
 

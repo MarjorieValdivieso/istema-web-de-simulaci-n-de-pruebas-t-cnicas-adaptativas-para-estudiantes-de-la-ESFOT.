@@ -1,59 +1,65 @@
-import logoDog from '../assets/dog-hand.webp'
 import { useState } from 'react'
-
+import { FaLock } from 'react-icons/fa'
 
 const Reset = () => {
-    const [tokenback, setTokenBack] = useState(false);
+    // Puedes cambiar temporalmente a true para visualizar el formulario de cambio de contraseña
+    const [tokenback, setTokenBack] = useState(true);
 
-    
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-
+        <div className="flex flex-col items-center justify-center h-screen bg-slate-50 px-4">
             
-            <h1 className="text-3xl font-semibold mb-2 text-center text-gray-500">
-                Bienvenido nuevamente
-            </h1>
-            <small className="text-gray-400 block my-4 text-sm">
-                Pro favor, ingrese los siguientes datos
-            </small>
-            <img
-                className="object-cover h-80 w-80 rounded-full border-4 border-solid border-slate-600"
-                src={logoDog}
-                alt="image description"
-            />
+            {/* Icono institucional de seguridad */}
+            <div className="mb-6 text-blue-900 bg-blue-100 p-6 rounded-full shadow-sm">
+                <FaLock className="text-5xl" />
+            </div>
 
-            {tokenback && (
+            <div className="flex flex-col items-center justify-center max-w-md w-full bg-white p-8 rounded-2xl shadow-md border border-gray-100 text-center">
+                <h1 className="text-2xl md:text-3xl font-extrabold text-blue-950 mb-1">
+                    Restablecer Contraseña
+                </h1>
+                <p className="text-gray-500 text-sm mb-6">
+                    Por favor, ingresa tu nueva contraseña para la plataforma ESFOT
+                </p>
 
-                <form className="w-80">
+                {tokenback ? (
+                    <form className="w-full space-y-4 text-left">
+                        <div>
+                            {/* Campo nueva contraseña */}
+                            <label className="mb-1 block text-sm font-semibold text-gray-700">Nueva contraseña</label>
+                            <input 
+                                type="password" 
+                                placeholder="Ingresa tu nueva contraseña"
+                                className="w-full rounded-md border border-gray-300 py-2 px-3 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900"
+                                required
+                            />
+                        </div>
 
-                    <div className="mb-1">
+                        <div>
+                            {/* Campo repetir contraseña */}
+                            <label className="mb-1 block text-sm font-semibold text-gray-700">Confirmar contraseña</label>
+                            <input 
+                                type="password" 
+                                placeholder="Repite tu contraseña"
+                                className="w-full rounded-md border border-gray-300 py-2 px-3 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900"
+                                required
+                            />
+                        </div>
 
-                        {/* Campo nueva contraseña */}
-                        <label className="mb-2 block text-sm font-semibold">Nueva contraseña</label>
-                        <input type="password" placeholder="Ingresa tu nueva contraseña"
-                            className="block w-full rounded-md border border-gray-300 py-1 px-1.5 text-gray-500"
-                        />
-                        
-                        
-                        {/* Campo repetir contraseña */}
-                        <label className="mb-2 block text-sm font-semibold">Confirmar contraseña</label>
-                        <input type="password" placeholder="Repite tu contraseña"
-                            className="block w-full rounded-md border border-gray-300 py-1 px-1.5 text-gray-500"
-                        />
-
+                        <div className="pt-2">
+                            <button 
+                                type="submit"
+                                className="bg-blue-900 text-white font-semibold border py-2.5 w-full rounded-xl hover:bg-blue-800 transition duration-300 shadow-sm"
+                            >
+                                Actualizar Contraseña
+                            </button>
+                        </div>
+                    </form>
+                ) : (
+                    <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 w-full" role="alert">
+                        <span className="font-medium">Token inválido o expirado.</span> Solicita un nuevo enlace de recuperación.
                     </div>
-
-                    <div className="mb-3">
-                        <button className="bg-gray-600 text-slate-300 border py-2 
-                        w-full rounded-xl mt-5 hover:scale-105 duration-300 hover:bg-gray-900 
-                        hover:text-white">
-                            Enviar
-                        </button>
-
-                    </div>
-                    
-                </form>
-            )}
+                )}
+            </div>
         </div>
     )
 }

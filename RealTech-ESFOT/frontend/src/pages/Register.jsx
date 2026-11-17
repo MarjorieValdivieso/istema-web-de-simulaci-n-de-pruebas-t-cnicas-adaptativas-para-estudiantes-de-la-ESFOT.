@@ -2,81 +2,85 @@ import { useState } from "react"
 import { MdVisibility, MdVisibilityOff } from "react-icons/md"
 import { Link } from "react-router"
 
-
-
 export const Register = () => {
-
     const [showPassword, setShowPassword] = useState(false)
 
     return (
-        <div className="flex flex-col sm:flex-row h-screen">
+        <div className="flex flex-col sm:flex-row min-h-screen">
 
-            <div className="w-full sm:w-1/2 h-screen bg-white flex justify-center items-center">
+            {/* Formulario de Registro */}
+            <div className="w-full sm:w-1/2 min-h-screen bg-white flex justify-center items-center px-6 py-10">
+                <div className="w-full max-w-md">
 
-
-                <div className="md:w-4/5 sm:w-full">
-
-                    <h1 className="text-3xl font-semibold mb-2 text-center uppercase text-gray-500">Bienvenido(a)</h1>
-
-                    <small className="text-gray-400 block my-4 text-sm">Por favor ingresa tus datos</small> 
+                    <h1 className="text-3xl font-extrabold mb-1 text-center text-blue-950">Registro de Estudiante</h1>
+                    <p className="text-gray-500 text-center mb-6 text-sm">Crea tu cuenta institucional en la ESFOT</p> 
                     
                     {/* Formulario */}
-                    <form>
+                    <form className="space-y-3">
 
                         {/* Campo nombre */}
-                        <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Nombre</label>
-                            <input type="text" placeholder="Ingresa tu nombre" className="block w-full rounded-md border
-                            border-gray-300  py-1 px-1.5 text-gray-500"
+                        <div>
+                            <label className="mb-1 block text-sm font-semibold text-gray-700">Nombre</label>
+                            <input 
+                                type="text" 
+                                placeholder="Ingresa tu nombre" 
+                                className="w-full rounded-md border border-gray-300 py-2 px-3 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" 
+                                required
                             />
                         </div>
-
 
                         {/* Campo apellido */}
-                        <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Apellido</label>
-                            <input type="text" placeholder="Ingresa tu apellido" className="block w-full rounded-md border
-                            border-gray-300 py-1 px-1.5 text-gray-500"
+                        <div>
+                            <label className="mb-1 block text-sm font-semibold text-gray-700">Apellido</label>
+                            <input 
+                                type="text" 
+                                placeholder="Ingresa tu apellido" 
+                                className="w-full rounded-md border border-gray-300 py-2 px-3 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" 
+                                required
                             />
                         </div>
 
-
                         {/* Campo dirección */}
-                        <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Dirección</label>
-                            <input type="text" placeholder="Ingresa tu dirección de domicilio" className="block w-full 
-                            rounded-md border border-gray-300 py-1 px-1.5 text-gray-500"
+                        <div>
+                            <label className="mb-1 block text-sm font-semibold text-gray-700">Dirección</label>
+                            <input 
+                                type="text" 
+                                placeholder="Ingresa tu dirección de domicilio" 
+                                className="w-full rounded-md border border-gray-300 py-2 px-3 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" 
                             />
                         </div>
                         
-
                         {/* Campo celular */}
-                        <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Celular</label>
-                            <input type="text" inputMode="tel" placeholder="Ingresa tu celular" className="block w-full 
-                            rounded-md border border-gray-300 py-1 px-1.5 text-gray-500" />
+                        <div>
+                            <label className="mb-1 block text-sm font-semibold text-gray-700">Celular</label>
+                            <input 
+                                type="text" 
+                                inputMode="tel" 
+                                placeholder="Ingresa tu número celular" 
+                                className="w-full rounded-md border border-gray-300 py-2 px-3 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" 
+                            />
                         </div>
-
 
                         {/* Campo correo electrónico */}
-                        <div className="mb-3">
-                            <label className="mb-2 block text-sm font-semibold">Correo electrónico</label>
-                            <input type="email" placeholder="Ingresa tu correo electrónico" className="block w-full rounded-md 
-                            border border-gray-300 py-1 px-1.5 text-gray-500" />
+                        <div>
+                            <label className="mb-1 block text-sm font-semibold text-gray-700">Correo electrónico institucional</label>
+                            <input 
+                                type="email" 
+                                placeholder="ejemplo@epn.edu.ec" 
+                                className="w-full rounded-md border border-gray-300 py-2 px-3 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900" 
+                                required
+                            />
                         </div>
 
-
-
                         {/* Campo Contraseña */}
-                        <div className="mb-3">
-                            
-                            <label className="block text-sm font-semibold mb-1">Contraseña</label>
-
+                        <div>
+                            <label className="block text-sm font-semibold mb-1 text-gray-700">Contraseña</label>
                             <div className="relative">
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     placeholder="************"
-                                    className="w-full rounded-md border border-gray-300 px-3 py-2 pr-10"
+                                    className="w-full rounded-md border border-gray-300 py-2 px-3 pr-10 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900"
+                                    required
                                 />
 
                                 <button
@@ -90,33 +94,45 @@ export const Register = () => {
                             </div>
                         </div>
 
-
                         {/* Botón Register */}
-                        <div className="mb-3">
-                            <button className="bg-gray-500 text-slate-300 border py-2 w-full rounded-xl mt-5 
-                            hover:scale-105 duration-300 hover:bg-gray-900 hover:text-white">Registrarse</button>
+                        <div className="pt-2">
+                            <button 
+                                type="submit"
+                                className="bg-blue-900 text-white font-semibold border py-2.5 w-full rounded-xl hover:bg-blue-800 transition duration-300 shadow-sm"
+                            >
+                                Registrarse
+                            </button>
                         </div>
-
 
                     </form>
 
-
                     {/* Enlace para iniciar sesión si ya tiene una cuenta */}
-                    <div className="mt-3 text-sm flex justify-between items-center">
-                        <p>¿Ya posees una cuenta?</p>
-                        <Link to="/login" className="py-2 px-5 bg-gray-500 text-slate-300 border rounded-xl hover:scale-110 
-                        duration-300 hover:bg-gray-900">Iniciar sesión</Link>
+                    <div className="mt-6 text-sm flex justify-between items-center border-t border-gray-200 pt-4">
+                        <span className="text-gray-600">¿Ya posees una cuenta?</span>
+                        <Link 
+                            to="/login" 
+                            className="py-2 px-4 bg-slate-100 text-blue-900 font-semibold border border-blue-200 rounded-xl hover:bg-blue-900 hover:text-white transition duration-300"
+                        >
+                            Iniciar sesión
+                        </Link>
                     </div>
 
                 </div>
-
             </div>
 
-            {/* Imagen */}
-            <div className="w-full sm:w-1/2 h-1/3 sm:h-screen bg-[url('/public/images/dogregister.jpg')] bg-no-repeat 
-                bg-cover bg-center sm:block hidden">
+            {/* Imagen lateral institucional / académica */}
+            <div className="w-full sm:w-1/2 h-1/3 sm:h-screen bg-gradient-to-br from-blue-900 to-blue-950 flex flex-col justify-center items-center text-white p-12 sm:block hidden bg-[url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop')] bg-no-repeat bg-cover bg-center relative">
+                <div className="absolute inset-0 bg-blue-950 opacity-75"></div>
+                <div className="relative z-10 flex flex-col justify-center h-full max-w-md">
+                    <h2 className="text-3xl font-bold mb-4">Únete a ESFOT TEST</h2>
+                    <p className="text-blue-100 text-sm leading-relaxed">
+                        Regístrate para acceder a simulaciones de pruebas técnicas adaptativas diseñadas para potenciar tu rendimiento académico y profesional en la Escuela de Formación de Tecnólogos.
+                    </p>
+                </div>
             </div>
 
         </div>
     )
 }
+
+export default Register

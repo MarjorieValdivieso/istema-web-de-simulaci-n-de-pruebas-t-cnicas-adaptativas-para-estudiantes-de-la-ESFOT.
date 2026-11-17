@@ -1,24 +1,31 @@
-import logoDog from '../assets/doglost.jpg'
+import { Link } from 'react-router'
+import { FaLock } from 'react-icons/fa'
 
 export const Forbidden = () => {
-    
     return (
+        <div className="flex flex-col items-center justify-center h-screen bg-slate-50 px-4">
+            
+            {/* Icono de acceso restringido */}
+            <div className="mb-6 text-red-700 bg-red-100 p-6 rounded-full">
+                <FaLock className="text-6xl" />
+            </div>
 
-        <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center max-w-md text-center bg-white p-8 rounded-2xl shadow-md border border-gray-100 w-full">
+                <p className="text-3xl md:text-4xl font-extrabold text-blue-950 mt-4">Acceso Denegado</p>
 
-            <img className="object-cover h-80 w-80 rounded-full border-4 border-solid
-            border-slate-600" src={logoDog} alt="image description" />
+                <p className="text-gray-600 mt-4 text-base">
+                    Lo sentimos, no cuentas con los permisos necesarios para acceder a este módulo de simulaciones adaptativas de la ESFOT.
+                </p>
 
-            <div className="flex flex-col items-center justify-center">
-
-                <p className="text-3xl md:text-4xl lg:text-5xl 
-                text-gray-800 mt-12">Page Not Allowed</p>
-
-                <p className="md:text-lg lg:text-xl
-                text-gray-600 mt-8">Sorry, you are not allowed to access this page.</p>
-
-
+                <Link 
+                    to="/dashboard" 
+                    className="p-3 mt-8 w-full text-center bg-blue-900 text-white font-semibold border rounded-xl hover:bg-blue-800 transition duration-300 shadow-sm"
+                >
+                    Regresar al Panel
+                </Link>
             </div>
         </div>
     )
 }
+
+export default Forbidden
