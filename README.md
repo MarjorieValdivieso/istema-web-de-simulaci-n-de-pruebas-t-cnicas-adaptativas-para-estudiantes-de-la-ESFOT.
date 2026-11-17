@@ -57,10 +57,13 @@ GET  /api/perfil          Header: Authorization: Bearer <token>
 ## Registro de avance del Scrum Master
 
 **RealTech-ESFOT**
+### Distribución de actividades prácticas
 
-| Integrantes        | Parte práctica backend| Parte práctica frontend|
+| Integrante | Backend | Frontend |
+|:---|:---:|:---:|
+| Emely Bone | ✅ Cumple |  No cumple |
+| Marjorie Valdivieso | ✅ Cumple | ✅ Cumple |
+| Maria Jose Paredes |  No cumple | ✅ Cumple |
 
-| EMELY BONE         | ✔ Cumple ☐ No cumple | ☐ Cumple ☐ No cumple |
-| MARJORIE VALDIVIESO| ✔ Cumple ☐ No cumple | ✔ Cumple ☐ No cumple |
-| MARIA JOSE PAREDES | ☐ Cumple ☐ No cumple | ✔ Cumple ☐ No cumple |
+
 
