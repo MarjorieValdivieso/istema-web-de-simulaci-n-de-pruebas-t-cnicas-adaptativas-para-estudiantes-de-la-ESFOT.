@@ -58,10 +58,9 @@ GET  /api/perfil          Header: Authorization: Bearer <token>
 
 **RealTech-ESFOT**
 
-| Integrantes | Parte práctica backend | Parte práctica frontend |
-|---|---|---|
-| (Nombre 1) | ☐ Cumple ☐ No cumple | ☐ Cumple ☐ No cumple |
-| (Nombre 2) | ☐ Cumple ☐ No cumple | ☐ Cumple ☐ No cumple |
-| (Nombre 3) | ☐ Cumple ☐ No cumple | ☐ Cumple ☐ No cumple |
+| Integrantes        | Parte práctica backend| Parte práctica frontend|
 
-**Observación:** (novedades del trabajo grupal)
+| EMELY BONE         | ✔ Cumple ☐ No cumple | ☐ Cumple ☐ No cumple |
+| MARJORIE VALDIVIESO| ✔ Cumple ☐ No cumple | ✔ Cumple ☐ No cumple |
+| MARIA JOSE PAREDES | ☐ Cumple ☐ No cumple | ✔ Cumple ☐ No cumple |
+
