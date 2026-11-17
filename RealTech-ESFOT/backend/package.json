@@ -1,0 +1,22 @@
+{
+  "name": "realtech-esfot-backend",
+  "version": "1.0.0",
+  "description": "API RESTful - Sistema web para la simulación de pruebas técnicas basadas en casos de estudio empresariales con niveles de complejidad adaptativos (ESFOT)",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": ["express", "mongodb", "esfot", "pruebas-tecnicas"],
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.0",
+    "nodemailer": "^7.0.9"
+  }
+}
